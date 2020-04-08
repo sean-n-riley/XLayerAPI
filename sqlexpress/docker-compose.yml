@@ -6,7 +6,7 @@ services:
     container_name: xlayer-api-sqlexpress01
     hostname: xlayer-api-sqlexpress01
     networks:
-      - sxiws_net
+      - xlayer_net
     ports:
       - 1433:1433
     volumes:
@@ -18,5 +18,5 @@ services:
       - MSSQL_PID=Express
 
 networks:
-  xlayer-net:
+  xlayer_net:
     driver: bridge

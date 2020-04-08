@@ -7,7 +7,7 @@ services:
     container_name: xlayer-api-zoo1
     hostname: zoo1
     networks: 
-      - kafka-net
+      - xlayer_net
     ports:
       - 2181:2181
     environment:
@@ -23,7 +23,7 @@ services:
     container_name: xlayer-api-kafka1
     hostname: kafka1
     networks: 
-      - kafka-net
+      - xlayer_net
     ports:
       - 9092:9092
     environment:
@@ -37,5 +37,5 @@ services:
       - KAFKA_DEFAULT_REPLICATION_FACTOR=1
 
 networks:
-  xlayer-net:
+  xlayer_net:
     driver: bridge

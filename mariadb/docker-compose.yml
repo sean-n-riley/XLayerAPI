@@ -6,7 +6,7 @@ services:
     container_name: xlayer-api-db01
     hostname: xlayer-api-db01
     networks:
-      - sxiws_net
+      - xlayer_net
     ports:
       - 3306:3306
     volumes:
@@ -25,5 +25,5 @@ services:
       'mysqld --innodb-flush-method=fsync --init-file=/init.sql'
 
 networks:
-  xlayer-net:
+  xlayer_net:
     driver: bridge
