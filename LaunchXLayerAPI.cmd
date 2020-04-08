@@ -30,4 +30,5 @@ goto KAFKA
 :KAFKA
 echo Starting Kafka Docker
 start /D D:\code\XLayerAPI\kafka\ StartKafka.cmd
+start java -jar "D:\code\XLayerAPI\kafka\Conduktor-1.0.jar"
 GOTO EOF
