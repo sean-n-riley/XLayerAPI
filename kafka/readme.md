@@ -3,32 +3,31 @@
 
 https://jaceklaskowski.gitbooks.io/apache-kafka/kafka-docker.html
 
-// List all the Topics
 
-//====================
+List all the Topics
+===================
 
 docker exec -t xlayer-api-kafka1 /usr/bin/kafka-topics --zookeeper zoo1:2181 --list
 
 docker exec -t xlayer-api-kafka1 /usr/bin/kafka-topics --zookeeper zoo1:2181 --topic cmdLineTest --describe
 
-//Create a new Topic
-
-//==================
+Create a new Topic
+==================
 
 docker exec -t xlayer-api-kafka1 /usr/bin/kafka-topics --zookeeper zoo1:2181 --partitions=3 --replication-factor=1 --create --topic cmdLineTest
 
-//Write to Topic (Producer)
-//==============
+Write to Topic (Producer)
+=========================
 
 docker exec -it xlayer-api-kafka1 /usr/bin/kafka-console-producer --broker-list 127.0.0.1:9092 --topic cmdLineTest --producer-property acks=all
 
-//Read from a Topic (Consumer)
-//=================
+Read from a Topic (Consumer)
+============================
 
 docker exec -it xlayer-api-kafka1 /usr/bin/kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic cmdLineTest
 
 
-================================================================================================================
+===================================================================================
 
 Taken from:
 
