@@ -16,10 +16,14 @@ You can check in the "Services" Management Console that you now have a new Windo
 CONFIGURATION
 =============
 
-1. XLayerAPI can send its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
+1. Select where you whish to have the transactions sent by setting the following configuration either "true" or "false"
+	- output.transaction.database=true
+	- output.transaction.kafka=false
+
+2. XLayerAPI can send its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
 	Connect to the database and run the relevant init.sql script to create the database (|init_MYSQL.sql or init_MSSQL.sql)
 		NOTE: you do not need to create any tables as the XLayerAPI will automatically do this for you if they do not already exist.
-2. The default database is MySQL / MariaDB however should you wish to use a MSSQL or a MSSQLExpress database then comment out the configuration in the application.properties file 
+3. The default database is MySQL / MariaDB however should you wish to use a MSSQL or a MSSQLExpress database then comment out the configuration in the application.properties file 
 under the comment 
 
 	#===============================================================================
@@ -38,10 +42,10 @@ and uncomment the configuration under the comment
 	#   MySQL settings above.
 	#===============================================================================
 
-3. Should you wish to change some of the default settings for XLayerAPI you can do so in the application.properties file.
+4. Should you wish to change some of the default settings for XLayerAPI you can do so in the application.properties file.
 		NOTE: Once you have made changes to this file you will need to restart the application.
 
-4. Other settings that should be checked are:
+5. Other settings that should be checked are:
 
 sync.transaction.timeout   - This is the number of seconds the session will waid for a response before sending a failed message to the client. (Default 60 seconds)
 server.port                - This is the port that the XLayerAPI will listen on. (Default = 9788)
