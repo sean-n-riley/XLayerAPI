@@ -16,7 +16,7 @@ You can check in the "Services" Management Console that you now have a new Windo
 CONFIGURATION
 =============
 
-1. XLayerAPI sends all its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
+1. XLayerAPI can send its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
 	Connect to the database and run the relevant init.sql script to create the database (|init_MYSQL.sql or init_MSSQL.sql)
 		NOTE: you do not need to create any tables as the XLayerAPI will automatically do this for you if they do not already exist.
 2. The default database is MySQL / MariaDB however should you wish to use a MSSQL or a MSSQLExpress database then comment out the configuration in the application.properties file 
@@ -51,9 +51,8 @@ spring.datasource.url      - The MYSQL connection string needed to connect to th
 	                         
 NB: If you want to use a different database name then simply change "sxirestapi" to the name you wish to use in the init.sql file and in the connection string.
 
-USEFUL LINKS
+Useful URLS:
 ============
-
-SWAGGER Documentation = https://localhost:9788/swagger-ui.html
-Spring Management     = https://localhost:9789/actuator
-                      = https://localhost:9789/actuator/health
+	SWAGGER Documentation	= https://localhost:9788/swagger-ui.html
+	Spring Management	= https://localhost:9789/actuator
+				= https://localhost:9789/actuator/health

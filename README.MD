@@ -1,14 +1,14 @@
 You need to have docker installed. (https://www.docker.com/products/docker-desktop)
 
-1. To install and get the XLayer API running copy the following files to a directory on your machine:
+1. To install and get the XLayer API running copy the following directories to your machine:
 
-	docker-compose.yml
-	dockerCfg\my.cnf
-	dockerCfg\init.sql
+- kafka
+- mariadb \ sqlexpress
+- xlayerapi
 
-2. Check the docker-compose.yml file to make sure you are using the Windows paths under "volumes:" and that the paths are correct.  Comment out the *nix volumes.
+2. In each directory, check the docker-compose.yml file to make sure you are using the Windows paths under "volumes:" and that the paths are correct.  Comment out the *nix volumes.
 
-3. Now from the directory you copied the files to run the following:
+3. Now from each directory run the following:
 
 	docker-compose up -d
 
