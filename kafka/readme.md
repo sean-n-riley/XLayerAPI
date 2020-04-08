@@ -13,9 +13,8 @@ docker run –-net=kafka -d -p 9092:9092 –-name=xlayer-api-kafka1 -e KAFKA_ZOO
 Run Kafka WebGUI (Check this https://success.docker.com/article/getting-started-with-kafka)
 docker service create --network kafka --name manager -e ZOOKEEPER_HOSTS=zoo1 --publish=9000:9000 qnib/plain-kafka-manager:2018-04-25
 
-===============================================================================================================================
 #Interact with Kafka
-# https://jaceklaskowski.gitbooks.io/apache-kafka/kafka-docker.html
+https://jaceklaskowski.gitbooks.io/apache-kafka/kafka-docker.html
 
 // List all the Topics
 //====================
@@ -24,14 +23,15 @@ docker exec -t xlayer-api-kafka1 /usr/bin/kafka-topics --zookeeper zoo1:2181 --t
 
 //Create a new Topic
 //==================
+
 docker exec -t xlayer-api-kafka1 /usr/bin/kafka-topics --zookeeper zoo1:2181 --partitions=3 --replication-factor=1 --create --topic cmdLineTest
 
 //Write to Topic (Producer)
 //==============
+
 docker exec -it xlayer-api-kafka1 /usr/bin/kafka-console-producer --broker-list 127.0.0.1:9092 --topic cmdLineTest --producer-property acks=all
 
 //Read from a Topic (Consumer)
 //=================
-docker exec -it xlayer-api-kafka1 /usr/bin/kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic cmdLineTest
 
-===============================================================================================================================
+docker exec -it xlayer-api-kafka1 /usr/bin/kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic cmdLineTest
