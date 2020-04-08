@@ -1,0 +1,15 @@
+<service>
+  
+  <!-- ID of the service. It should be unique across the Windows system-->
+  <id>XLayerAPI</id>
+  <!-- Display name of the service -->
+  <name>XLayerAPI</name>
+  <!-- Service description -->
+  <description>SXI XLayer API 3.0</description>
+  
+  <!-- Path to the executable, which should be started -->
+  <executable>C:/Program Files/java/jdk-13.0.2/bin/java</executable>
+  <arguments>-Xrs -Xmx256m -jar "XLayerAPI.jar" --spring.config.location=file:///C:/SXI/XLayerAPI/application.properties</arguments>
+  <logmode>rotate</logmode>
+
+</service>

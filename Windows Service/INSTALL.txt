@@ -1,0 +1,58 @@
+INSTALLATION
+============
+
+Follow the steps outlined below to get the XLayerAPI installed as a windows service.
+
+1. Make sure you have Oracle Java JDK 13.02 installed (https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
+2. Unzip this archive to X:\SXI\XLayerAPI
+3. Edit the XLayerAPI.xml configuration file that "spring.config.location" argument in the "arguments" element is pointing to the directory you extracted the archive to in the above step. (e.g. X:\SXI\XLayerAPI)
+4. Open a command prompt as Administrator
+5. Change directory to X:\SXI\XLayerAPI
+6. Run the following: XLayerAPI.exe install
+
+You can check in the "Services" Management Console that you now have a new Windows Service called "XLayerAPI".
+
+CONFIGURATION
+=============
+
+1. XLayerAPI sends all its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
+	Connect to the database and run the relevant init.sql script to create the database (|init_MYSQL.sql or init_MSSQL.sql)
+		NOTE: you do not need to create any tables as the XLayerAPI will automatically do this for you if they do not already exist.
+2. The default database is MySQL / MariaDB however should you wish to use a MSSQL or a MSSQLExpress database then comment out the configuration in the application.properties file 
+under the comment 
+
+	#===============================================================================
+	# MYSQL / MARIADB Database Settings
+	# NOTE:
+	#   COMMENT OUT this configuration if you wish to use a MS database
+	#  (NB Make sure you uncomment the MSSQL settings below.
+	#===============================================================================
+
+and uncomment the configuration under the comment
+
+	#===============================================================================
+	# MSSQL Server / SQLExpress Database Settings
+	# NOTE:
+	#   UNCOMMENT if you wish to use a MS database (NB Make sure you comment out the
+	#   MySQL settings above.
+	#===============================================================================
+
+3. Should you wish to change some of the default settings for XLayerAPI you can do so in the application.properties file.
+		NOTE: Once you have made changes to this file you will need to restart the application.
+
+4. Other settings that should be checked are:
+
+sync.transaction.timeout   - This is the number of seconds the session will waid for a response before sending a failed message to the client. (Default 60 seconds)
+server.port                - This is the port that the XLayerAPI will listen on. (Default = 9788)
+spring.datasource.url      - The MYSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:mysql://${MYSQL_HOST:localhost}:3306/sxirestapi)
+						   - or -
+						   - The MSSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:sqlserver://localhost:1433;databaseName=sxirestapi)
+	                         
+NB: If you want to use a different database name then simply change "sxirestapi" to the name you wish to use in the init.sql file and in the connection string.
+
+USEFUL LINKS
+============
+
+SWAGGER Documentation = https://localhost:9788/swagger-ui.html
+Spring Management     = https://localhost:9789/actuator
+                      = https://localhost:9789/actuator/health
