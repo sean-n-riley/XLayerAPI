@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db01:
+    image: mariadb:10.5.2
+    container_name: xlayer-api-db01
+    hostname: xlayer-api-db01
+    networks:
+      - sxiws_net
+    ports:
+      - 3306:3306
+    volumes:
+      # ===== Windows Host =====
+      - D:/dockerImgCfgs/xlayerrestapi_mariadb/DB01:/var/lib/mysql
+      - D:/dockerImgCfgs/xlayerrestapi_mariadb/my.cnf:/etc/mysql/my.cnf
+      - D:/dockerImgCfgs/xlayerrestapi_mariadb/init.sql:/init.sql
+      # ====== Linux Host ======
+      #- ./dockerCfg/my.cnf:/etc/mysql/my.cnf
+      #- ./dockerCfg/init.sql:/init.sql
+      #- /opt/SXI/SXIDB:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=mysql
+      - MYSQL_ROOT_PASSWORD=sXi_Pass
+    command:
+      'mysqld --innodb-flush-method=fsync --init-file=/init.sql'
+
+networks:
+  sxiws_net:
+    driver: bridge
