@@ -11,12 +11,12 @@ services:
       - 3306:3306
     volumes:
       # ===== Windows Host =====
-      - D:/dockerImgCfgs/xlayerrestapi_mariadb/DB01:/var/lib/mysql
-      - D:/dockerImgCfgs/xlayerrestapi_mariadb/my.cnf:/etc/mysql/my.cnf
-      - D:/dockerImgCfgs/xlayerrestapi_mariadb/init.sql:/init.sql
+      - D:/code/XLayerAPI/mariadb/DB01:/var/lib/mysql
+      - D:/code/XLayerAPI/mariadb/my.cnf:/etc/mysql/my.cnf
+      - D:/code/XLayerAPI/mariadb/init.sql:/init.sql
       # ====== Linux Host ======
-      #- ./dockerCfg/my.cnf:/etc/mysql/my.cnf
-      #- ./dockerCfg/init.sql:/init.sql
+      #- ./code/XLayerAPI/mariadb/my.cnf:/etc/mysql/my.cnf
+      #- ./code/XLayerAPI/mariadb/init.sql:/init.sql
       #- /opt/SXI/SXIDB:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=mysql

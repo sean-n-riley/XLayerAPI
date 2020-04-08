@@ -11,7 +11,7 @@ services:
       - 1433:1433
     volumes:
       # ===== Windows Host =====
-      - D:\dockerImgCfgs\xlayerreatapi_sqlexpress\DB01:/var/opt/mssql/data
+      - D:/code/XLayerAPI/sqlexpress/DB01:/var/opt/mssql/data
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=sXi_Pass
