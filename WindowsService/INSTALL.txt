@@ -23,6 +23,7 @@ CONFIGURATION
 2. XLayerAPI can send its transactions to a database.  Depending on which database you use (either MySQL/MariaDB or MSSQL Server/Express)
 	Connect to the database and run the relevant init.sql script to create the database (|init_MYSQL.sql or init_MSSQL.sql)
 		NOTE: you do not need to create any tables as the XLayerAPI will automatically do this for you if they do not already exist.
+
 3. The default database is MySQL / MariaDB however should you wish to use a MSSQL or a MSSQLExpress database then comment out the configuration in the application.properties file 
 under the comment 
 
