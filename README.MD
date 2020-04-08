@@ -40,7 +40,7 @@ Useful URLS:
 ============
 	SWAGGER Documentation	= https://localhost:9788/swagger-ui.html
 	Spring Management	= https://localhost:9789/actuator
-		= https://localhost:9789/actuator/health
+				= https://localhost:9789/actuator/health
 
 TODO:
 - Add XLayerAPI SpringBoot app to an Image that can be run from docker.
