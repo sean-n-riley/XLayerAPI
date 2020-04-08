@@ -25,5 +25,5 @@ services:
       'mysqld --innodb-flush-method=fsync --init-file=/init.sql'
 
 networks:
-  sxiws_net:
+  xlayer-net:
     driver: bridge

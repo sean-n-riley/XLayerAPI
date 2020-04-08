@@ -18,5 +18,5 @@ services:
       - MSSQL_PID=Express
 
 networks:
-  sxiws_net:
+  xlayer-net:
     driver: bridge
