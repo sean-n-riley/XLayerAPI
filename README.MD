@@ -2,6 +2,7 @@ You need to have docker installed. (https://www.docker.com/products/docker-deskt
 
 1. To install and get the XLayer API running copy the following directories to your machine:
 
+- api
 - kafka
 - mariadb \ sqlexpress
 - xlayerapi
@@ -11,6 +12,8 @@ You need to have docker installed. (https://www.docker.com/products/docker-deskt
 3. Now from each directory run the following:
 
 	docker-compose up -d
+
+4. Alternatively you can run the LaunchXLayerAPI.cmd cmd file and select which containers you would like to start.
 
 NOTE:
 =====
