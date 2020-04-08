@@ -1,3 +1,7 @@
+We use the Confluent Images for both Zookeeper and Kafka in this enviroment.
+
+We also use Conduktor (https://www.conduktor.io/) to view the Kafka cluster including listing the topics and watching the messages being added to a partition during testing)
+
 #Interact with Kafka in Docker
 ==============================
 
