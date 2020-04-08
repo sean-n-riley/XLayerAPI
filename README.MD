@@ -33,13 +33,14 @@ You should then be able to connect to the MariaDB using an external tool like DB
 	xlayer-api-db01 | xxxx-xx-xx xx:xx:xx [Note] [Entrypoint]: Temporary server started.
 	
 You need to wait for the database to be initialized completely.
+
 ---------------------------------------------------------------------------------------------------------
 
 Useful URLS:
 ============
-SWAGGER Documentation = https://localhost:9788/swagger-ui.html
-Spring Management     = https://localhost:9789/actuator
-                      = https://localhost:9789/actuator/health
+	SWAGGER Documentation = https://localhost:9788/swagger-ui.html
+	Spring Management     = https://localhost:9789/actuator
+						  = https://localhost:9789/actuator/health
 
 TODO:
 - Add XLayerAPI SpringBoot app to an Image that can be run from docker.
@@ -55,4 +56,3 @@ NOTE: You will need to import the certificate (sxirestapiCert.crt) into any app 
 Running as a windows service:
 =============================
 WinSW - https://github.com/kohsuke/winsw
-
