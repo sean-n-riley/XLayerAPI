@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    app1:
+        image: xlayer.co.za:5000/xlayerapi:3.0p2
+        container_name: xlayer_api_app01
+        hostname: xlayer_api_app01
+        networks:
+            - xlayerapi
+        ports:
+            - 9788:9788
+            - 9789:9789
+        volumes:
+            # ===== Windows Host =====
+            - D:/code/XLayerAPI/api/application.properties:/opt/SXI/application.properties
+
+networks:
+    xlayerapi:
+        external: true

@@ -3,10 +3,10 @@ version: '3'
 services:
   db01:
     image: mariadb:10.5.2
-    container_name: xlayer-api-db01
-    hostname: xlayer-api-db01
+    container_name: xlayer_api_db01
+    hostname: xlayer_api_db01
     networks:
-      - xlayer_net
+      - xlayerapi
     ports:
       - 3306:3306
     volumes:
@@ -25,5 +25,5 @@ services:
       'mysqld --innodb-flush-method=fsync --init-file=/init.sql'
 
 networks:
-  xlayer_net:
-    driver: bridge
+  xlayerapi:
+    external: true

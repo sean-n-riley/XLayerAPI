@@ -3,10 +3,10 @@ version: '3'
 services:
   db01:
     image: mcr.microsoft.com/mssql/server:2017-latest
-    container_name: xlayer-api-sqlexpress01
-    hostname: xlayer-api-sqlexpress01
+    container_name: xlaye_api_sqlexpress01
+    hostname: xlayer_api_sqlexpress01
     networks:
-      - xlayer_net
+      - xlayerapi
     ports:
       - 1433:1433
     volumes:
@@ -18,5 +18,5 @@ services:
       - MSSQL_PID=Express
 
 networks:
-  xlayer_net:
-    driver: bridge
+  xlayerapi:
+    external: true

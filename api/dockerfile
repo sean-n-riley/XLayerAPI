@@ -1,0 +1,7 @@
+FROM openjdk:15-jdk-slim
+WORKDIR /opt/SXI
+COPY xlayerrestapi-3.0P2.jar xlayerapi.jar
+COPY application.properties application.properties
+ENTRYPOINT ["java","-jar","xlayerapi.jar", "--spring.config.location=file:/opt/SXI/application.properties"]
+EXPOSE 9788
+EXPOSE 9789
