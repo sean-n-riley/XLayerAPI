@@ -3,12 +3,13 @@ INSTALLATION
 
 Follow the steps outlined below to get the XLayerAPI installed as a windows service.
 
-1. Make sure you have Oracle Java JDK 13.02 installed (https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
-2. Unzip this archive to X:\SXI\XLayerAPI
+1. Make sure you have Oracle Java JDK 13.02 or higher installed (https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
+2. Unzip the XLayerAPI archive to X:\SXI\XLayerAPI
 3. Edit the XLayerAPI.xml configuration file that "spring.config.location" argument in the "arguments" element is pointing to the directory you extracted the archive to in the above step. (e.g. X:\SXI\XLayerAPI)
 4. Open a command prompt as Administrator
 5. Change directory to X:\SXI\XLayerAPI
-6. Run the following: XLayerAPI.exe install
+6. Run the following: 
+	XLayerAPI.exe install
 
 You can check in the "Services" Management Console that you now have a new Windows Service called "XLayerAPI".
 
