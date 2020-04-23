@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
     app1:
@@ -6,7 +6,7 @@ services:
         container_name: xlayer_api_app01
         hostname: xlayer_api_app01
         networks:
-            - xlayerapi
+            - api_net
         ports:
             - 9788:9788
             - 9789:9789
@@ -15,5 +15,6 @@ services:
             - D:/code/XLayerAPI/api/application.properties:/opt/SXI/application.properties
 
 networks:
-    xlayerapi:
-        external: true
+    api_net:
+        external:
+        name: xlayerapi

@@ -45,3 +45,5 @@ echo Starting Conduktor 1.0
 start java -jar "D:\code\XLayerAPI\kafka\Conduktor-1.0.jar"
 cls
 goto MENU
+
+:EOF
