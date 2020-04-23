@@ -13,14 +13,16 @@ echo 1 - MariaDB
 echo 2 - MS SQL Express
 echo 3 - Kafka
 echo 4 - Conduktor 1.0
-echo 5 - EXIT
+echo 5 - XLayer API
+echo 6 - EXIT
 echo.
 SET /P M=Type 1, 2, 3, 4 or 5 then press ENTER:
 IF %M%==1 GOTO MARIADB
 IF %M%==2 GOTO MSSQLEXPRESS
 IF %M%==3 GOTO KAFKA
 IF %M%==4 GOTO CONDUKTOR
-IF %M%==5 GOTO EOF
+IF %M%==5 GOTO API
+IF %M%==6 GOTO EOF
 
 :MARIADB
 echo Starting MariaDB Docker
@@ -43,6 +45,12 @@ goto MENU
 :CONDUKTOR
 echo Starting Conduktor 1.0
 start java -jar "D:\code\XLayerAPI\kafka\Conduktor-1.0.jar"
+cls
+goto MENU
+
+:API
+echo Starting XLayer API Docker
+start /D D:\code\XLayerAPI\api\ StartXLayerAPI.cmd
 cls
 goto MENU
 
