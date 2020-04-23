@@ -9,11 +9,13 @@ You need to have docker installed. (https://www.docker.com/products/docker-deskt
 
 2. In each directory, check the docker-compose.yml file to make sure you are using the Windows paths under "volumes:" and that the paths are correct.  Comment out the *nix volumes.
 
-3. Now from each directory run the following (NOTE: if you run docker-compose up you will need to have an existing network in docker called xlayerapi - docker network create -d bridge xlayerapi):
+3. Now from each directory run the following 
 
 	docker-compose up -d
 
-4. Alternatively you can run the LaunchXLayerAPI.cmd cmd file and select which containers you would like to start.
+(NOTE: if you run docker-compose up you will need to have an existing network in docker called xlayerapi.  This network can be created by running 'docker network create -d bridge xlayerapi'):
+
+4. Alternatively you can run the LaunchXLayerAPI.cmd cmd file and select which containers you would like to start.  If you use this method the network is created for you.
 
 NOTE:
 =====
