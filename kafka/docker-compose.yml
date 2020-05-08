@@ -7,7 +7,7 @@ services:
     container_name: xlayer_api_zoo01
     hostname: xlayer_api_zoo01
     networks: 
-      - api_net
+      - xlayerapi
     ports:
       - 2181:2181
     environment:
@@ -23,7 +23,7 @@ services:
     container_name: xlayer_api_kafka01
     hostname: xlayer_api_kafka01
     networks: 
-      - api_net
+      - xlayerapi
     ports:
       - 9092:9092
     environment:
@@ -36,7 +36,7 @@ services:
       - KAFKA_NUM_PARTITIONS=3
       - KAFKA_DEFAULT_REPLICATION_FACTOR=1
 
-  networks:
-    api_net:
-      external:
-        name: xlayerapi
+networks:
+  xlayerapi:
+    external:
+      name: xlayerapi

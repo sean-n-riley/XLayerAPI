@@ -6,7 +6,7 @@ services:
     container_name: xlayer_api_db01
     hostname: xlayer_api_db01
     networks:
-      - api_net
+      - xlayerapi_net
     ports:
       - 3306:3306
     volumes:
@@ -25,6 +25,6 @@ services:
       'mysqld --innodb-flush-method=fsync --init-file=/init.sql'
 
 networks:
-  api_net:
+  xlayerapi_net:
     external:
-      name: xlayerapi
+      name: xlayerapi_net

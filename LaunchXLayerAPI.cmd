@@ -16,7 +16,7 @@ echo 4 - Conduktor 1.0
 echo 5 - XLayer API
 echo 6 - EXIT
 echo.
-SET /P M=Type 1, 2, 3, 4 or 5 then press ENTER:
+SET /P M=Type 1, 2, 3, 4 ,5 or 6 then press ENTER:
 IF %M%==1 GOTO MARIADB
 IF %M%==2 GOTO MSSQLEXPRESS
 IF %M%==3 GOTO KAFKA
@@ -32,7 +32,7 @@ goto MENU
 
 :MSSQLEXPRESS
 echo Starting MSSQLExpress Docker
-start /D D:\code\XLayerAPI\sqlexpress\ StartSQLExpressa.cmd
+start /D D:\code\XLayerAPI\sqlexpress\ StartSQLExpress.cmd
 cls
 goto MENU
 

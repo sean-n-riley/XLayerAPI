@@ -6,7 +6,7 @@ services:
     container_name: xlaye_api_sqlexpress01
     hostname: xlayer_api_sqlexpress01
     networks:
-      - api_net
+      - xlayerapi_net
     ports:
       - 1433:1433
     volumes:
@@ -18,6 +18,6 @@ services:
       - MSSQL_PID=Express
 
 networks:
-  api_net:
+  xlayerapi_net:
     external:
       name: xlayerapi

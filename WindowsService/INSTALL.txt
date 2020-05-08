@@ -3,9 +3,10 @@ INSTALLATION
 
 Follow the steps outlined below to get the XLayerAPI installed as a windows service.
 
-1. Make sure you have Oracle Java JDK 13.02 or higher installed (https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
+1. Make sure you have Oracle Java JDK 13.02 or higher installed (14.01 is prefered) (https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
 2. Unzip the XLayerAPI archive to X:\SXI\XLayerAPI
 3. Edit the XLayerAPI.xml configuration file that "spring.config.location" argument in the "arguments" element is pointing to the directory you extracted the archive to in the above step. (e.g. X:\SXI\XLayerAPI)
+4. Check in the XLayerAPI.xml config file that you are pointing to the correct directory that Java (installed above) is installed to.
 4. Open a command prompt as Administrator
 5. Change directory to X:\SXI\XLayerAPI
 6. Run the following: 
@@ -43,21 +44,27 @@ and uncomment the configuration under the comment
 	#   MySQL settings above.
 	#===============================================================================
 
+NOTE:
+	If you wish to use windows authentication please uncomment the block of configuration properties under the WINDOWS AUTHENTICATION comment.
+
 4. Should you wish to change some of the default settings for XLayerAPI you can do so in the application.properties file.
 		NOTE: Once you have made changes to this file you will need to restart the application.
 
 5. Other settings that should be checked are:
 
-sync.transaction.timeout   - This is the number of seconds the session will waid for a response before sending a failed message to the client. (Default 60 seconds)
-server.port                - This is the port that the XLayerAPI will listen on. (Default = 9788)
-spring.datasource.url      - The MYSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:mysql://${MYSQL_HOST:localhost}:3306/sxirestapi)
-						   - or -
-						   - The MSSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:sqlserver://localhost:1433;databaseName=sxirestapi)
+sync.transaction.timeout   	- This is the number of seconds the session will waid for a response before sending a failed message to the client. (Default 60 seconds)
+output.transaction.database	- Set to 'true' as we write to a database by default.  However if you do not wish to write to the database set this to 'false'
+output.transaction.kafka   	- Set to 'false' by default.  If you wish the trasnsactions to be written to a Kafka stream then sert this to 'true'
+debug						- Set to 'false' by default.  Set this ti 'true' in you wish to interrogate more verbose log files.
+server.port                	- This is the port that the XLayerAPI will listen on. (Default = 9788)
+spring.datasource.url      	- The MYSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:mysql://${MYSQL_HOST:localhost}:3306/sxirestapi)
+						   	- or -
+						   	- The MSSQL connection string needed to connect to the "sxirestapi" database. (Default = jdbc:sqlserver://localhost:1433;databaseName=sxirestapi)
 	                         
 NB: If you want to use a different database name then simply change "sxirestapi" to the name you wish to use in the init.sql file and in the connection string.
 
 Useful URLS:
 ============
 	SWAGGER Documentation	= https://localhost:9788/swagger-ui.html
-	Spring Management	= https://localhost:9789/actuator
-				= https://localhost:9789/actuator/health
+	Spring Management		= https://localhost:9789/actuator
+							= https://localhost:9789/actuator/health
