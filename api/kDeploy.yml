@@ -1,0 +1,49 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+    name: xlayerapi
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: xlayerapi
+    template:
+        metadata:
+            labels:
+                app: xlayerapi
+        spec:
+            containers:
+              - name: xlayerapi
+                image: xlayer.co.za:5000/xlayerapi:3.0p2
+                imagePullPolicy: Always
+                ports:
+                  - containerPort: 9788
+                  - containerPort: 9789
+                readinessProbe:
+                    httpGet:
+                        path: /actuator/health
+                        port: 9789
+                    initialDelaySeconds: 5
+                livenessProbe:
+                    httpGet:
+                        path: /actuator/health
+                        port: 9789
+                    initialDelaySeconds: 5
+            restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: xlayerapi-svc
+spec:
+    ports:
+        - name: app
+        port: 9788
+        targetPort: 9788
+        protocol: TCP
+        - name: man
+        port: 9789
+        targetPort: 9789
+        protocol: TCP
+    selector:
+        app: xlayerapi

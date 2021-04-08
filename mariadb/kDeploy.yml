@@ -1,0 +1,69 @@
+secretGenerator:
+  - name: mysql-pass
+    literals:
+    - password=sXi_Pass
+apiVersion: v1
+kind: Service
+metadata:
+  name: xlayer-db
+  labels:
+    app: xlayerapi
+spec:
+  ports:
+    - port: 3306
+    selector:
+      app: xlayerapi
+      tier: db
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pv-claim
+  labels:
+    app: xlayerapi
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: xlayerapi
+  labels:
+    app: xlayerapi
+spec:
+  selector:
+    matchLabels:
+      app: xlayerapi
+      tier: db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: xlayerapi
+        tier: db
+    spec:
+      containers:
+      - image: mariadb:10.5.2
+        name: xlayer_api_db01
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: db
+        volumeMounts:
+        - name: db-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: db-persistent-storage
+        persistentVolumeClaim:
+          claimName: db-pv-claim
