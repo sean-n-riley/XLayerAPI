@@ -65,7 +65,7 @@ NB: If you want to use a different database name then simply change "sxirestapi"
 
 Useful URLS:
 ============
-	SWAGGER Documentation	= https://localhost:9788/swagger-ui/
+	SWAGGER Documentation	= https://localhost:9788/swagger-ui.html
 	Spring Management		= https://localhost:9789/
 							= https://localhost:9789/health
 							= https://localhost:9789/hawtio
