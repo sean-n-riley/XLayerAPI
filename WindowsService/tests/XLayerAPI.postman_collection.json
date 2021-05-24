@@ -1,0 +1,888 @@
+{
+	"info": {
+		"_postman_id": "dcc8ce12-9a6b-46cd-a8e9-6e631d6e3c20",
+		"name": "XLayerAPI",
+		"description": "XLayerAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JWT",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"sxi_admin\",\r\n    \"password\": \"T@gi2b2_sXi_Pass\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/auth/signin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfdXNlciIsImlhdCI6MTYxOTc5MzMwMSwiZXhwIjoxNjE5ODc5NzAxfQ.yqPpO-ioGjARfv24p-bYOpZvr9vEhNW5asN4Z7v1HAKQfgKqdyaMbHy8Tc-6ZtZsX-4R3FZ75CLaXkOcfZBmtQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"sxi_user13\",\r\n    \"password\":\"Pass@123\",\r\n    \"role\": [\"sxi\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/auth/signup",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Universal Async JSON Bearer",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfYWRtaW4iLCJpYXQiOjE2MjAzNzMyNDgsImV4cCI6MTYyMDQ1OTY0OH0.upzmCh6d6O18R2jd5swk3x34gNIU2epQctvM26WN4N_29jUL42HOMEdDW-pwTvLTUxpVdKqYcLEGDduABYMuCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Origin",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Access-Control-Request-Method",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Access-Control-Request-Headers",
+								"type": "text"
+							},
+							{
+								"key": "X-Content-Type-Options",
+								"value": "nosniff",
+								"type": "text"
+							},
+							{
+								"key": "X-XSS-Protection",
+								"value": "1; mode=block",
+								"type": "text"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache, no-store, max-age=0, must-revalidate",
+								"type": "text"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache",
+								"type": "text"
+							},
+							{
+								"key": "Expires",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=31536000 ; includeSubDomains",
+								"type": "text"
+							},
+							{
+								"key": "X-Frame-Options",
+								"value": "DENY",
+								"type": "text"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked ",
+								"type": "text"
+							},
+							{
+								"key": "Date",
+								"value": "Tue, 10 Nov 2020 12:38:54 GMT",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "close",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfdXNlciIsImlhdCI6MTYxOTc5MzMwMSwiZXhwIjoxNjE5ODc5NzAxfQ.yqPpO-ioGjARfv24p-bYOpZvr9vEhNW5asN4Z7v1HAKQfgKqdyaMbHy8Tc-6ZtZsX-4R3FZ75CLaXkOcfZBmtQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name_first\":\"\",\"amount_net\":195.4,\"m_payment_id\":\"SuperUnique1\",\"custom_str1\":\"\",\"custom_str2\":\"\",\"signature\":\"ad8e7685c9522c24365d7ccea8cb3db7\",\"pf_payment_id\":1089250,\"payment_status\":\"COMPLETE\",\"amount_fee\":-4.6,\"item_name\":\"test+product\",\"merchant_id\":10000100,\"name_last\":\"\",\"email_address\":\"\",\"custom_int1\":0,\"custom_int2\":0,\"custom_int3\":0,\"custom_int4\":0,\"item_description\":\"test+description\",\"custom_int5\":0,\"custom_str3\":\"\",\"amount_gross\":200,\"custom_str4\":\"\",\"custom_str5\":\"\"}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/uniAsync",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"uniAsync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "XLayer Async JSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfYWRtaW4iLCJpYXQiOjE2MjAzNzMyNDgsImV4cCI6MTYyMDQ1OTY0OH0.upzmCh6d6O18R2jd5swk3x34gNIU2epQctvM26WN4N_29jUL42HOMEdDW-pwTvLTUxpVdKqYcLEGDduABYMuCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYxOTc4Mzg0OCwiZXhwIjoxNjE5ODcwMjQ4fQ.g9SD2R8vQTZp5tOqThw19k93kwUTEAlYhqFTexg0Rbflijko-8ZIp2y-9P_ORBWwiwMAyj2W4MI-ktFevx2Xzg",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"integrationName\": \"ACME\",\r\n  \"actionName\": \"Create\",\r\n  \"sourceId\": \"54321\",\r\n  \"payload\": {\"string\":\"one\",\"two\":2}\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/async",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"async"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGREG GET Triggers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfYWRtaW4iLCJpYXQiOjE2MjAzNzMyNDgsImV4cCI6MTYyMDQ1OTY0OH0.upzmCh6d6O18R2jd5swk3x34gNIU2epQctvM26WN4N_29jUL42HOMEdDW-pwTvLTUxpVdKqYcLEGDduABYMuCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzeGlfdXNlciIsImlhdCI6MTYxOTc5MzMwMSwiZXhwIjoxNjE5ODc5NzAxfQ.yqPpO-ioGjARfv24p-bYOpZvr9vEhNW5asN4Z7v1HAKQfgKqdyaMbHy8Tc-6ZtZsX-4R3FZ75CLaXkOcfZBmtQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/triggers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"triggers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Unread sxi_admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/markTriggerUnread/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"markTriggerUnread",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic",
+			"item": [
+				{
+					"name": "Signup Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"client_5\",\r\n    \"password\":\"Pass@123\",\r\n    \"role\": [\"user\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/auth/signup",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Universal Get",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Pass@123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "sxiclient",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/uniGet?m_payment_id=123&pf_payment_id=1216710",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"uniGet"
+							],
+							"query": [
+								{
+									"key": "m_payment_id",
+									"value": "123"
+								},
+								{
+									"key": "pf_payment_id",
+									"value": "1216710"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Universal Async JSON Basic",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Origin",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Access-Control-Request-Method",
+								"type": "text"
+							},
+							{
+								"key": "Vary",
+								"value": "Access-Control-Request-Headers",
+								"type": "text"
+							},
+							{
+								"key": "X-Content-Type-Options",
+								"value": "nosniff",
+								"type": "text"
+							},
+							{
+								"key": "X-XSS-Protection",
+								"value": "1; mode=block",
+								"type": "text"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache, no-store, max-age=0, must-revalidate",
+								"type": "text"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache",
+								"type": "text"
+							},
+							{
+								"key": "Expires",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=31536000 ; includeSubDomains",
+								"type": "text"
+							},
+							{
+								"key": "X-Frame-Options",
+								"value": "DENY",
+								"type": "text"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked ",
+								"type": "text"
+							},
+							{
+								"key": "Date",
+								"value": "Tue, 10 Nov 2020 12:38:54 GMT",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "close",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name_first\":\"\",\"amount_net\":195.4,\"m_payment_id\":\"SuperUnique1\",\"custom_str1\":\"\",\"custom_str2\":\"\",\"signature\":\"ad8e7685c9522c24365d7ccea8cb3db7\",\"pf_payment_id\":1089250,\"payment_status\":\"COMPLETE\",\"amount_fee\":-4.6,\"item_name\":\"test+product\",\"merchant_id\":10000100,\"name_last\":\"\",\"email_address\":\"\",\"custom_int1\":0,\"custom_int2\":0,\"custom_int3\":0,\"custom_int4\":0,\"item_description\":\"test+description\",\"custom_int5\":0,\"custom_str3\":\"\",\"amount_gross\":200,\"custom_str4\":\"\",\"custom_str5\":\"\"}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/uniAsync",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"uniAsync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "XLayer Async RAW JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"integrationName\": \"ACME\",\r\n  \"actionName\": \"Create\",\r\n  \"sourceId\": \"54321\",\r\n  \"payload\": {\"string\":\"one\",\"two\":2}\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/async",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"async"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Universal Sync",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sxi_client",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pass@123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "SomeArbHeader",
+								"value": "testing\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name_first\":\"\",\"amount_net\":195.4,\"m_payment_id\":\"SuperUnique1\",\"custom_str1\":\"\",\"custom_str2\":\"\",\"signature\":\"ad8e7685c9522c24365d7ccea8cb3db7\",\"pf_payment_id\":1089250,\"payment_status\":\"COMPLETE\",\"amount_fee\":-4.6,\"item_name\":\"test+product\",\"merchant_id\":10000100,\"name_last\":\"\",\"email_address\":\"\",\"custom_int1\":0,\"custom_int2\":0,\"custom_int3\":0,\"custom_int4\":0,\"item_description\":\"test+description\",\"custom_int5\":0,\"custom_str3\":\"\",\"amount_gross\":200,\"custom_str4\":\"\",\"custom_str5\":\"\",\"testforkev\":111}"
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/rest/uniSync",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"uniSync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGREG GET Triggers sxi_user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "T@gi2b2_sXi_Pass",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "sxi_admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/triggers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"triggers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Unread sxi_admin Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/markTriggerUnread/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"markTriggerUnread",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Unread sxi_user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX3VzZXI6UGFzc0AxMjM=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/markTriggerUnread/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"markTriggerUnread",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as Unread sxi_client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2NsaWVudDpQYXNzQDEyMw==",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/markTriggerUnread/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"markTriggerUnread",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "None",
+			"item": [
+				{
+					"name": "SSL Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/ssl-test",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"ssl-test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetVersion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/version",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"version"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SIGREG GET Triggers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpY2xpZW50OlBhc3NAMTIz",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:9788/xlayer-api/sigreg/triggers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"sigreg",
+								"triggers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "XLayer Async RAW JSON",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "sxi_client",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Pass@123",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c3hpX2FkbWluOlRAZ2kyYjJfc1hpX1Bhc3M=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"integrationName\": \"ACME\",\r\n  \"actionName\": \"Create\",\r\n  \"sourceId\": \"54321\",\r\n  \"payload\": {\"string\":\"one\",\"two\":2}\r\n}"
+						},
+						"url": {
+							"raw": "https://192.168.100.101:9788/xlayer-api/rest/async",
+							"protocol": "https",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"101"
+							],
+							"port": "9788",
+							"path": [
+								"xlayer-api",
+								"rest",
+								"async"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NGrok Get Version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://000d921b7ab3.ngrok.io/xlayer-api/version",
+					"protocol": "https",
+					"host": [
+						"000d921b7ab3",
+						"ngrok",
+						"io"
+					],
+					"path": [
+						"xlayer-api",
+						"version"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
